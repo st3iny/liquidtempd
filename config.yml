@@ -1,0 +1,19 @@
+hwmon_label: Tctl
+levels:
+  - threshold: 0
+    color: lawngreen
+  - threshold: 45
+    color: yellow
+  - threshold: 50
+    color: orange
+  - threshold: 55
+    color: orangered
+  - threshold: 60
+    color: red
+targets:
+  - device: kraken
+    channel: ring
+  - device: kraken
+    channel: logo
+  - device: smart
+    channel: led
