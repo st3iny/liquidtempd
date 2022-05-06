@@ -27,11 +27,11 @@ pub struct Args {
     config: Option<String>,
 
     /// Interval in seconds to apply LED settings
-    #[clap(long, default_value_t = 15.0)]
+    #[clap(long, default_value_t = 3.0)]
     check_interval: f32,
 
     /// Interval in seconds to check CPU temperature
-    #[clap(long, default_value_t = 3.0)]
+    #[clap(long, default_value_t = 15.0)]
     apply_interval: f32,
 
     /// Window size of CPU temperature moving average in seconds
