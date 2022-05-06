@@ -97,14 +97,14 @@ fn main() {
     ctrlc::set_handler(|| {
         exit(1);
     })
-        .expect("Failed to start ctrlc handler");
+    .expect("Failed to start ctrlc handler");
 
     let checker = CpuTemperatureChecker::new(
         Duration::from_secs_f32(args.check_interval),
         &config.hwmon_label,
         average_temp.clone(),
     )
-        .expect("Failed to init checker task");
+    .expect("Failed to init checker task");
 
     let applier = LevelApplier::new(
         Duration::from_secs_f32(args.apply_interval),
