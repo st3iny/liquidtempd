@@ -37,11 +37,15 @@ impl LevelApplier {
             loop {
                 sleep(self.interval);
 
-                let avg = self
+                let avg = match self
                     .temps
                     .lock()
                     .expect("Failed to lock moving average mutex")
-                    .avg();
+                    .avg()
+                {
+                    Some(avg) => avg,
+                    None => continue,
+                };
 
                 let mut matched_level: Option<&Level> = None;
                 for level in &self.levels {
