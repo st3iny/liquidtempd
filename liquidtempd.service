@@ -5,6 +5,8 @@ Description=Set NZXT Kraken LEDs based on CPU temperature
 Type=simple
 Environment=RUST_LOG=info
 ExecStart=/usr/local/bin/liquidtempd
+Restart=on-failure
+RestartSec=5s
 
 [Install]
 WantedBy=default.target
