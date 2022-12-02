@@ -110,7 +110,7 @@ fn main() {
         Duration::from_secs_f32(args.apply_interval),
         config.levels,
         config.targets,
-        average_temp.clone(),
+        average_temp,
     );
 
     let tasks = vec![checker.run(), applier.run()];
